@@ -1,13 +1,13 @@
 import smtplib
-import config
-from email.message import EmailMessage
-from logic import getFinalData
-from selenium import webdriver
-
 import time
+from email.message import EmailMessage
 
+from selenium import webdriver
 # from var_dump import var_dump
 from selenium.webdriver.common.by import By
+
+import config
+from logic import getFinalData
 
 # Option headless / Commenter cette section pour visualiser l'execution du script (supp options=options)
 options = webdriver.ChromeOptions()

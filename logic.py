@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 # retourne top, left height
 def getPositionValues(id, driver):
     element = ''
@@ -9,7 +10,6 @@ def getPositionValues(id, driver):
         if element != '':
             element_style = element.get_attribute('style')
             split_string = element_style.split(';')
-            # print(split_string)
             left_px = split_string[3]
             left_px_int = int(''.join(filter(str.isdigit, left_px)))
 
@@ -89,7 +89,6 @@ def getLayout(course):
         return error
 
 
-# cours_0 = compileData('id_98_coursInt_0', 'id_98_cours_0')
 def getFinalData(class_id, position_id, driver):
     layout = getLayout(compileData(class_id, position_id, driver))
     if layout is not False:
