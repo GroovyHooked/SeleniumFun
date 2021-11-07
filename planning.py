@@ -22,11 +22,11 @@ driver.get('https://extranet.ynov.com/')
 
 # Selection du champs email et insertion des données
 emailXpath = driver.find_element(By.XPATH, "//*[@id=\"username\"]")
-emailXpath.send_keys(config.send_to)
+emailXpath.send_keys(config.ynov_mail)
 
 # Selection du champs Mot de passe et insertion des données
 passwordXpath = driver.find_element(By.XPATH, "//*[@id=\"password\"]")
-passwordXpath.send_keys(config.pass_to)
+passwordXpath.send_keys(config.ynov_password)
 
 # Click sur le bouton de connexion
 submitXpath = driver.find_element(By.XPATH, "//*[@id=\"login\"]/div[3]/div/input[4]")
@@ -174,7 +174,7 @@ if sixth_class is not None:
 msg = EmailMessage()
 msg['Subject'] = "Planning de la semaine"
 msg['From'] = config.mail_server
-msg['To'] = config.send_to
+msg['To'] = config.ynov_mail
 msg.set_content(new_layout)
 
 # Envoi du mail
@@ -183,7 +183,7 @@ with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
     smtp.starttls()
     smtp.ehlo()
 
-    smtp.login(config.mail_server, config.password)
+    smtp.login(config.mail_server, config.server_password)
     smtp.send_message(msg)
 
 """         
