@@ -78,6 +78,8 @@ def getLayout(course):
             duration = '(3h)'
         elif height == 39:
             duration = '(2h)'
+        else:
+            duration = 'Durée inconnue'
     else:
         error = 'Un problème est survenu !'
 

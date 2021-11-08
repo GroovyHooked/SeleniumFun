@@ -11,8 +11,8 @@ from logic import getFinalData
 
 # Option headless / Commenter cette section pour visualiser l'execution du script (supp options=options)
 options = webdriver.ChromeOptions()
-options.add_argument("--headless")
-# options.add_argument("window-size=700,1000")
+# options.add_argument("--headless")
+options.add_argument("window-size=700,1000")
 
 # Choix du driver installé
 driver = webdriver.Chrome("/Applications/MAMP/htdocs/selenium/chromedriver", options=options)
