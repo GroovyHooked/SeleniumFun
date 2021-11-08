@@ -50,7 +50,8 @@ def compileData(class_id, position_id, driver):
 
 # Mise en page des données récupérées
 def getLayout(course):
-    global day, part_of_day, duration, timetable, infos, error
+    global day, part_of_day, duration, timetable, infos
+    error = False
     if course is not False:
         left = course[0]
         top = course[1]
@@ -81,17 +82,17 @@ def getLayout(course):
         else:
             duration = 'Durée inconnue'
     else:
-        error = 'Un problème est survenu !'
+        error = True
 
-    if course is not False:
+    if error is not True:
         layout = day + ' ' + part_of_day + ' ' + duration + '\n\n' + timetable + '\n\n' + infos + \
                  '\n _______________________________________ \n\n'
         return layout
     else:
-        return error
+        return 'Un problème est survenu !'
 
 
 def getFinalData(class_id, position_id, driver):
     layout = getLayout(compileData(class_id, position_id, driver))
-    if layout is not False:
+    if layout is not None:
         return layout

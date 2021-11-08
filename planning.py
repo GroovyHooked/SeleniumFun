@@ -9,10 +9,12 @@ from selenium.webdriver.common.by import By
 import config
 from logic import getFinalData
 
+# from logic import getFinalData
+
 # Option headless / Commenter cette section pour visualiser l'execution du script (supp options=options)
 options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
-options.add_argument("window-size=700,1000")
+options.add_argument("--headless")
+# options.add_argument("window-size=700,1000")
 
 # Choix du driver installé
 driver = webdriver.Chrome("/Applications/MAMP/htdocs/selenium/chromedriver", options=options)
@@ -31,7 +33,7 @@ passwordXpath.send_keys(config.ynov_password)
 # Click sur le bouton de connexion
 submitXpath = driver.find_element(By.XPATH, "//*[@id=\"login\"]/div[3]/div/input[4]")
 submitXpath.click()
-
+time.sleep(0.5)
 # Click sur la section hyperPlanning
 planingXpath = driver.find_element(By.XPATH, "//*[@id=\"2-2\"]/div[1]/div[1]")
 planingXpath.click()
@@ -50,6 +52,7 @@ time.sleep(2)
 # week = driver.find_element(By.ID, 'GInterface.Instances[1].Instances[4]_j_5')
 # week.click()
 # time.sleep(2)
+
 
 new_layout = ''
 first_class = getFinalData('id_98_coursInt_0', 'id_98_cours_0', driver)
@@ -92,8 +95,6 @@ with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
 
     smtp.login(config.mail_server, config.server_password)
     smtp.send_message(msg)
-
-
 
 """         
 def testData(data):
