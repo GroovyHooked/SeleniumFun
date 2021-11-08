@@ -20,7 +20,7 @@ def getPositionValues(id, driver):
             height_px_int = int(''.join(filter(str.isdigit, height_px)))
             return (left_px_int, top_px_int, height_px_int)
         else:
-            return ''
+            return False
 
 
 # Extrait les horaires et le contenu des cours
@@ -37,7 +37,7 @@ def handlingClasses(id, driver):
             return False
 
 
-# retourne (top, left, height, horaire, infos cours)
+# Compilation de toutes les données, retourne (top, left, height, horaire, infos cours)
 def compileData(class_id, position_id, driver):
     course = handlingClasses(class_id, driver)
 
@@ -81,7 +81,7 @@ def getLayout(course):
     else:
         error = 'Un problème est survenu !'
 
-    if day:
+    if course is not False:
         layout = day + ' ' + part_of_day + ' ' + duration + '\n\n' + timetable + '\n\n' + infos + \
                  '\n _______________________________________ \n\n'
         return layout
