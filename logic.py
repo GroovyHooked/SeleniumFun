@@ -84,7 +84,7 @@ def getLayout(course):
     else:
         error = True
 
-    if error is not True:
+    if error is False:
         layout = day + ' ' + part_of_day + ' ' + duration + '\n\n' + timetable + '\n\n' + infos + \
                  '\n _______________________________________ \n\n'
         return layout
