@@ -48,13 +48,9 @@ select_campus.click()
 # On laisse la page se charger
 time.sleep(2)
 
-# Changement de semaine à des fins de test
-# week = driver.find_element(By.ID, 'GInterface.Instances[1].Instances[4]_j_5')
-# week.click()
-# time.sleep(2)
+week = driver.find_element(By.ID, 'GInterface.Instances[1].Instances[4]_j_10').text
+new_layout = 'Semaine '+ week + '\n\n'
 
-
-new_layout = ''
 first_class = getFinalData('id_98_coursInt_0', 'id_98_cours_0', driver)
 if first_class != 'Un problème est survenu !':
     new_layout += first_class
