@@ -6,7 +6,7 @@ clone project
 `pip install selenium`
 
 #### Third step
-install chrome drivers that match your chrome version
+install chrome driver that match your chrome version
 
 #### Final step
 Enter your credentials in config.py
