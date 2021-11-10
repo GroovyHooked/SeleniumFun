@@ -1,9 +1,12 @@
 # SeleniumFun
-### First Step
+#### First step
+clone project
+
+#### Second step
 `pip install selenium`
 
-### Second step
+#### Third step
 install chrome drivers that match your chrome version
 
-### Final step
+#### Final step
 Enter your credentials in config.py
