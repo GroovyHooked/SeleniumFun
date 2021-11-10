@@ -66,7 +66,7 @@ def getLayout(course):
         elif left == 419:
             day = 'Vendredi'
         else:
-            day = 'Jour inconnu '
+            day = 'Jour inconnu'
 
         if top < 100:
             part_of_day = 'Matin'
@@ -89,7 +89,7 @@ def getLayout(course):
                  '\n _______________________________________ \n\n'
         return layout
     else:
-        return 'Un problème est survenu !'
+        return False
 
 
 def getFinalData(class_id, position_id, driver):

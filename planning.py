@@ -3,13 +3,12 @@ import time
 from email.message import EmailMessage
 
 from selenium import webdriver
-# from var_dump import var_dump
 from selenium.webdriver.common.by import By
 
 import config
 from logic import getFinalData
 
-# from logic import getFinalData
+# from var_dump import var_dump
 
 # Option headless / Commenter cette section pour visualiser l'execution du script (supp options=options)
 options = webdriver.ChromeOptions()
@@ -47,30 +46,32 @@ select_campus.click()
 
 # On laisse la page se charger
 time.sleep(2)
-
+# week_test = driver.find_element(By.ID, 'GInterface.Instances[1].Instances[4]_j_11')
+# week_test.click()
+# time.sleep(1)
 week = driver.find_element(By.ID, 'GInterface.Instances[1].Instances[4]_j_10').text
-new_layout = 'Semaine '+ week + '\n\n'
+new_layout = 'Semaine ' + week + '\n\n'
 
 first_class = getFinalData('id_98_coursInt_0', 'id_98_cours_0', driver)
-if first_class != 'Un problème est survenu !':
+if first_class is not False:
     new_layout += first_class
 second_class = getFinalData('id_98_coursInt_1', 'id_98_cours_1', driver)
-if second_class != 'Un problème est survenu !':
+if second_class is not False:
     new_layout += second_class
 third_class = getFinalData('id_98_coursInt_2', 'id_98_cours_2', driver)
-if third_class != 'Un problème est survenu !':
+if third_class is not False:
     new_layout += third_class
 fourth_class = getFinalData('id_98_coursInt_3', 'id_98_cours_3', driver)
-if fourth_class != 'Un problème est survenu !':
+if fourth_class is not False:
     new_layout += fourth_class
 fifth_class = getFinalData('id_98_coursInt_4', 'id_98_cours_4', driver)
-if fifth_class != 'Un problème est survenu !':
+if fifth_class is not False:
     new_layout += fifth_class
 sixth_class = getFinalData('id_98_coursInt_5', 'id_98_cours_5', driver)
-if sixth_class != 'Un problème est survenu !':
+if sixth_class is not False:
     new_layout += sixth_class
 seventh_class = getFinalData('id_98_coursInt_6', 'id_98_cours_6', driver)
-if seventh_class != 'Un problème est survenu !':
+if seventh_class is not False:
     new_layout += seventh_class
 
 # Agencement du mail
